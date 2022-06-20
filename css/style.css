@@ -1,0 +1,158 @@
+* {
+  padding : 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color : #0d1117;
+  --second-color : #e7e7e7;
+  --card-color : rgba(255,255,255,.11);
+  --line-color : #e7e7e723;
+  --overlaycolor : rgba(0,0,0,0.481);
+}
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: var(--main-color);
+  color: #fff
+}
+
+li {
+  list-style: none;
+}
+
+.header {
+  display: grid;
+  place-items: center;
+  padding: 50px;
+}
+.header h2 {
+  font-size: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  margin : 16px;
+  gap: 10px;
+}
+
+.cards .card-style {
+  background-color: var(--card-color);
+  padding: 10px 20px ;
+  border-radius: 5px;
+}
+
+.cards .add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cards .icon {
+  background-color: var(--main-color);
+  width: 50px ;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.cards .icon i {
+  font-size: 30px;
+}
+
+.cards .card-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-details .menu-app {
+  position: relative;
+  cursor: pointer;
+}
+.card-details .menu-app:hover .menu {
+  transform: scale(1);
+}
+.card-details .menu-app .menu {
+  position: absolute;
+  background-color: #000;
+  width: 80px;
+  padding: 10px 0;
+  border-radius: 5px;
+  transform: scale(0);
+  transition: all .4s;
+}
+.card-details .menu-app .menu li {
+  cursor: pointer;
+  padding: 3px 10px ;
+  transition: all .4s;
+}
+.card-details .menu-app .menu li:hover {
+  background-color: var(--line-color);
+}
+
+
+.popup-app {
+  position: fixed;
+  z-index: 88;
+  place-items: center;
+  background-color: var(--overlaycolor);
+  inset: 0;
+  display: none;
+}
+
+.popup-app.grid_style {
+  display: grid;
+}
+.popup-app .popup {
+  background-color: rgb(32 32 32);
+  width: 340px;
+  padding: 10px 20px ;
+}
+
+.popup-app .popup .header-pop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.popup-app .popup .header-pop > .closebtn {
+  cursor: pointer;
+  font-size: 22px;
+}
+.popup-app .popup form {
+  margin: 15px 0;
+}
+.popup-app .popup form > div {
+  margin: 15px 0; 
+}
+.popup-app .popup form > div :where(input,textarea) {
+  display: block;
+  width :100%;
+  padding : 7px ;
+  background-color: initial;
+  outline-width:0 ;
+  border: 1px solid #eee ;
+  color: var(--second-color);
+  border-radius: 3px;
+}
+
+.popup-app .popup form > div textarea {
+  height: 120px;
+  resize: none;
+}
+
+.popup-app .popup form > button {
+  width: 100% ;
+  padding: 10px 0;
+  border-width: 0;
+  border-radius: 5px ;
+  background-color: var(--card-color);
+  color: var(--second-color);
+  cursor: pointer;
+}
